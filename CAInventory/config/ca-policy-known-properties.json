@@ -1,0 +1,33 @@
+{
+  "source": "https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0",
+  "sourceSecondary": "https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta",
+  "verifiedOn": "2026-09-01",
+  "v1.0": [
+    "id",
+    "displayName",
+    "description",
+    "state",
+    "createdDateTime",
+    "modifiedDateTime",
+    "deletedDateTime",
+    "conditions",
+    "grantControls",
+    "sessionControls",
+    "templateId",
+    "partialEnablementStrategy"
+  ],
+  "beta": [
+    "id",
+    "displayName",
+    "description",
+    "state",
+    "createdDateTime",
+    "modifiedDateTime",
+    "deletedDateTime",
+    "conditions",
+    "grantControls",
+    "sessionControls",
+    "templateId",
+    "partialEnablementStrategy"
+  ]
+}

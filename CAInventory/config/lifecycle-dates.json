@@ -1,0 +1,84 @@
+{
+  "warnWithinDays": 180,
+  "items": [
+    {
+      "id": "legacy-mfa-sspr-policy-management",
+      "label": "Management of authentication methods in the legacy MFA and SSPR policy",
+      "effect": "Authentication methods can no longer be managed in the legacy MFA and SSPR policies. Only at migrationComplete is the authentication methods policy authoritative.",
+      "date": "2025-09-30",
+      "relatedCheckIds": [
+        "Auth-02",
+        "Foundation-04"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+    },
+    {
+      "id": "mandatory-mfa-phase1-postponement",
+      "label": "End of postponement for mandatory MFA phase 1 (admin portals)",
+      "effect": "Postponement for the Azure, Entra, and Intune portals is no longer possible. Since then, emergency accounts must be able to sign in with MFA themselves.",
+      "date": "2025-09-30",
+      "relatedCheckIds": [
+        "Emergency-07",
+        "Auth-12"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication"
+    },
+    {
+      "id": "mandatory-mfa-phase2",
+      "label": "Mandatory MFA phase 2 (CLI, PowerShell, IaC, REST)",
+      "effect": "MFA required for Create, Update, and Delete operations against management.azure.com; read operations remain unaffected. Workload identities are excluded; user accounts running as service accounts are not.",
+      "date": "2025-10-01",
+      "relatedCheckIds": [
+        "Identity-04",
+        "Identity-05",
+        "Identity-17"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication"
+    },
+    {
+      "id": "all-resources-scope-change",
+      "label": "Behavior change for 'All resources' on resource exclusions",
+      "effect": "Low-privileged scopes that were previously excluded from policy enforcement no longer are. Users who previously reached an application without CA enforcement may now get a CA challenge. The rollout is phased and started in March 2026; there is no hard cutover date per tenant.",
+      "date": "2026-03-01",
+      "relatedCheckIds": [
+        "Foundation-12",
+        "Foundation-14"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps"
+    },
+    {
+      "id": "approved-client-app-readonly",
+      "label": "Grant control 'Require approved client app' becomes read-only",
+      "effect": "The control and the policies containing it become read-only: they can no longer be created or changed, but can still be disabled or deleted. Existing policies keep enforcing as long as they stay enabled. The migration step is the combination 'Require approved client app OR Require app protection policy'.",
+      "date": "2026-06-30",
+      "relatedCheckIds": [
+        "Condition-08",
+        "Device-09",
+        "Device-11"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/migrate-approved-client-app"
+    },
+    {
+      "id": "mandatory-mfa-phase2-postponement",
+      "label": "End of postponement for mandatory MFA phase 2",
+      "effect": "Postponement for CLI, PowerShell, IaC, and REST can no longer be requested. Anyone who had postponed phase 1 automatically got phase 2 on the same date.",
+      "date": "2026-07-01",
+      "relatedCheckIds": [
+        "Identity-04",
+        "Identity-05"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mandatory-multifactor-authentication"
+    },
+    {
+      "id": "id-protection-legacy-risk-policies",
+      "label": "Legacy risk policies in Microsoft Entra ID Protection",
+      "effect": "The risk policies configured in ID Protection are being retired; risk policy belongs in Conditional Access. Build equivalent CA policies in report-only first, then set the old policies in ID Protection to Disabled.",
+      "date": "2026-10-01",
+      "relatedCheckIds": [
+        "Evidence-09",
+        "Evidence-07"
+      ],
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies"
+    }
+  ]
+}

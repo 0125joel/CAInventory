@@ -1,0 +1,14 @@
+{
+  "methodModes": {
+    "email": ["email"],
+    "fido2": ["fido2"],
+    "microsoftAuthenticator": ["microsoftAuthenticatorPush", "deviceBasedPush"],
+    "voice": ["voice"],
+    "sms": ["sms"],
+    "softwareOath": ["softwareOath"],
+    "temporaryAccessPass": ["temporaryAccessPassOneTime", "temporaryAccessPassMultiUse"],
+    "x509Certificate": ["x509CertificateSingleFactor", "x509CertificateMultiFactor"],
+    "qrCodePin": ["qrCodePin"],
+    "verifiableCredentials": []
+  }
+}

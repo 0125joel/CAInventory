@@ -1,0 +1,206 @@
+{
+  "defaultMinimumWeight": null,
+  "unknownWeight": 0,
+  "tiers": {
+    "0": "No MFA method / SSPR-like only (email)",
+    "1": "SMS/voice",
+    "2": "Temporary Access Pass",
+    "3": "OTP (software/hardware)",
+    "4": "Authenticator push",
+    "5": "Phishing-resistant (FIDO2/Windows Hello/passkey/certificate)"
+  },
+  "methods": {
+    "email": {
+      "label": "Email",
+      "weight": 0,
+      "mfaStrength": false,
+      "modes": [
+        "email"
+      ]
+    },
+    "mobilePhone": {
+      "label": "Mobile phone (SMS/call)",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "sms",
+        "voice"
+      ]
+    },
+    "alternateMobilePhone": {
+      "label": "Alternate mobile phone",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "voice"
+      ]
+    },
+    "officePhone": {
+      "label": "Office phone",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "voice"
+      ]
+    },
+    "voiceMobile": {
+      "label": "Voice call, mobile",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "voice"
+      ]
+    },
+    "voiceAlternateMobile": {
+      "label": "Voice call, alternate mobile",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "voice"
+      ]
+    },
+    "voiceOffice": {
+      "label": "Voice call, office",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "voice"
+      ]
+    },
+    "sms": {
+      "label": "SMS",
+      "weight": 1,
+      "mfaStrength": true,
+      "modes": [
+        "sms"
+      ]
+    },
+    "temporaryAccessPass": {
+      "label": "Temporary Access Pass",
+      "weight": 2,
+      "mfaStrength": true,
+      "modes": [
+        "temporaryAccessPassOneTime",
+        "temporaryAccessPassMultiUse"
+      ]
+    },
+    "softwareOneTimePasscode": {
+      "label": "Software OATH token",
+      "weight": 3,
+      "mfaStrength": true,
+      "modes": [
+        "softwareOath"
+      ]
+    },
+    "hardwareOneTimePasscode": {
+      "label": "Hardware OATH token",
+      "weight": 3,
+      "mfaStrength": true,
+      "modes": [
+        "hardwareOath"
+      ]
+    },
+    "microsoftAuthenticatorPush": {
+      "label": "Authenticator push",
+      "weight": 4,
+      "mfaStrength": true,
+      "modes": [
+        "microsoftAuthenticatorPush"
+      ]
+    },
+    "microsoftAuthenticatorPasswordless": {
+      "label": "Authenticator passwordless (phone sign-in)",
+      "weight": 4,
+      "mfaStrength": true,
+      "modes": [
+        "deviceBasedPush"
+      ]
+    },
+    "fido2SecurityKey": {
+      "label": "FIDO2 security key",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    },
+    "windowsHelloForBusiness": {
+      "label": "Windows Hello for Business",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "windowsHelloForBusiness"
+      ]
+    },
+    "passKeyDeviceBound": {
+      "label": "Passkey (device-bound)",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    },
+    "passKeyDeviceBoundAuthenticator": {
+      "label": "Passkey in Authenticator",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    },
+    "passKeyDeviceBoundAuthenticatorHardware": {
+      "label": "Passkey in hardware authenticator",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    },
+    "certificateBasedAuthentication": {
+      "label": "Certificate (single- or multifactor unknown)",
+      "weight": 5,
+      "mfaStrength": null,
+      "modes": null
+    },
+    "x509CertificateSingleFactor": {
+      "label": "Certificate (single-factor)",
+      "weight": 5,
+      "mfaStrength": false,
+      "modes": [
+        "x509CertificateSingleFactor"
+      ]
+    },
+    "x509CertificateMultiFactor": {
+      "label": "Certificate (multifactor)",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "x509CertificateMultiFactor"
+      ]
+    },
+    "passKeySynced": {
+      "label": "Passkey (synced)",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    },
+    "macOsSecureEnclaveKey": {
+      "label": "Platform Credential for macOS",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "windowsHelloForBusiness"
+      ]
+    },
+    "passKeyDeviceBoundWindowsHello": {
+      "label": "Passkey via Windows Hello",
+      "weight": 5,
+      "mfaStrength": true,
+      "modes": [
+        "fido2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "groups": [
+    {
+      "group": "Entra ID",
+      "values": [
+        "Users",
+        "Groups",
+        "Devices",
+        "Device settings",
+        "Domain names",
+        "Licenses",
+        "Entra ID Properties",
+        "Roles and administrators",
+        "Protected actions",
+        "Enterprise applications"
+      ]
+    },
+    {
+      "group": "Security and policy",
+      "values": [
+        "Conditional Access",
+        "Named locations",
+        "Terms of use",
+        "Authentication strengths",
+        "Authentication methods",
+        "Authentication methods activity",
+        "Registration campaign",
+        "Password protection",
+        "Password reset",
+        "Multifactor authentication (legacy)",
+        "Identity Protection"
+      ]
+    },
+    {
+      "group": "Governance",
+      "values": [
+        "Privileged Identity Management",
+        "Access reviews"
+      ]
+    },
+    {
+      "group": "External identities",
+      "values": [
+        "External Identities",
+        "Cross-tenant access settings",
+        "External collaboration settings"
+      ]
+    },
+    {
+      "group": "Monitoring",
+      "values": [
+        "Sign-in logs",
+        "Audit logs",
+        "Diagnostic settings",
+        "Log Analytics"
+      ]
+    },
+    {
+      "group": "Intune",
+      "values": [
+        "Intune compliance policies",
+        "Intune enrollment restrictions",
+        "Intune app protection policies",
+        "Intune connectors"
+      ]
+    },
+    {
+      "group": "Other",
+      "values": [
+        "Global Secure Access",
+        "Procedure (outside Entra)",
+        "CAInventory"
+      ]
+    }
+  ]
+}

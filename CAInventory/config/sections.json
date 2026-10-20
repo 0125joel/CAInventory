@@ -1,0 +1,52 @@
+{
+  "sections": [
+    {
+      "prefix": "Emergency",
+      "title": "Emergency access",
+      "intro": "The safety net for every mistake further along. These checks come before all the others.",
+      "order": 1
+    },
+    {
+      "prefix": "Foundation",
+      "title": "Policy foundation",
+      "intro": "Can Conditional Access even work, and what's the current state.",
+      "order": 2
+    },
+    {
+      "prefix": "Auth",
+      "title": "Verification and registration",
+      "intro": "Will people be able to sign in with what you're about to require of them.",
+      "order": 3
+    },
+    {
+      "prefix": "Identity",
+      "title": "People and access",
+      "intro": "Who falls under the policy, and who falls outside it, deliberately or not.",
+      "order": 4
+    },
+    {
+      "prefix": "Device",
+      "title": "Devices",
+      "intro": "What the device-based controls run on.",
+      "order": 5
+    },
+    {
+      "prefix": "Condition",
+      "title": "Access conditions",
+      "intro": "Under what circumstances the policy applies, and how long a session stays valid.",
+      "order": 6
+    },
+    {
+      "prefix": "Evidence",
+      "title": "Evidence and measurement",
+      "intro": "Can you demonstrate what happens, and over what window.",
+      "order": 7
+    },
+    {
+      "prefix": "Govern",
+      "title": "Management and durability",
+      "intro": "Does the setup keep holding up after the project is done.",
+      "order": 8
+    }
+  ]
+}

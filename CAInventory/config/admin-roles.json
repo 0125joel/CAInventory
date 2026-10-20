@@ -1,0 +1,42 @@
+{
+  "source": "https://learn.microsoft.com/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+  "sourceSecondary": "https://learn.microsoft.com/entra/identity/conditional-access/managed-policies",
+  "verifiedOn": "2026-08-24",
+  "phishingResistantRecommended": [
+    "Global Administrator",
+    "Application Administrator",
+    "Authentication Administrator",
+    "Billing Administrator",
+    "Cloud Application Administrator",
+    "Conditional Access Administrator",
+    "Exchange Administrator",
+    "Helpdesk Administrator",
+    "Password Administrator",
+    "Privileged Authentication Administrator",
+    "Privileged Role Administrator",
+    "Security Administrator",
+    "SharePoint Administrator",
+    "User Administrator"
+  ],
+  "roleTemplateIds": {
+    "_comment": "Fixed GUIDs that were previously hard-coded in four collector files. Each value was independently verified against the Microsoft page named; the date is listed per entry because the sources were not all checked at the same time.",
+    "globalAdministrator": {
+      "id": "62e90394-69f5-4237-9190-012177145e10",
+      "label": "Global Administrator (directory role, Template ID column)",
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "verifiedOn": "2026-08-28"
+    },
+    "directorySynchronizationAccounts": {
+      "id": "d29b2b05-8046-44ba-8758-1e26182fcf32",
+      "label": "Directory Synchronization Accounts (directory role, Template ID column)",
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "verifiedOn": "2026-08-28"
+    },
+    "restrictedGuestUserRoleId": {
+      "id": "2af84b1e-32c8-42b7-82bc-daa82404023b",
+      "label": "Restricted access (guestUserRoleId, policies/authorizationPolicy): the most restricted guest access level, not a directory role",
+      "learnUrl": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
+      "verifiedOn": "2026-08-28"
+    }
+  }
+}

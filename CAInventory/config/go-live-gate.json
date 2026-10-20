@@ -1,0 +1,6 @@
+{
+  "maxHighGapCount": 0,
+  "requireAllHardPreconditions": true,
+  "requireAllWavesOpen": true,
+  "requireAllConditionsMeasured": true
+}

@@ -1,0 +1,53 @@
+{
+  "waves": [
+    {
+      "id": "emergency",
+      "order": 1,
+      "name": "Emergency accounts",
+      "intro": "The safety net for every mistake further down the chain. Their conditions are the only ones that can't be bypassed with an exception.",
+      "conditions": [
+        { "label": "Two or more cloud-only, permanent Global Administrator accounts", "why": "Eligible via PIM isn't enough: activation itself requires working verification, exactly what can be missing during an outage.", "checkIds": ["Emergency-01", "Emergency-02"] },
+        { "label": "Both accounts have a phishing-resistant method registered", "why": "Since MFA became mandatory for the admin portals, the emergency account must be able to sign in itself; Microsoft recommends a passkey (FIDO2) or certificate-based authentication, and preferably a different method than regular admins use, so one failing method doesn't lock everyone out at once.", "checkIds": ["Emergency-07"], "requiresParameter": "-EmergencyAccountUpn or -EmergencyAccountId" },
+        { "label": "Both accounts are demonstrably tested (signed in within 90 days)", "why": "An emergency account that is never tested often turns out not to work in a crisis.", "checkIds": ["Emergency-05"] },
+        { "label": "The exclusion group is in every blocking and restricting policy", "why": "Not just in the policies you thought of — go through the full set.", "checkIds": ["Emergency-03"] },
+        { "label": "An alert fires on every sign-in by an emergency account, and the emergency procedure is validated", "why": "The account should never be used; every use is by definition an event someone needs to see.", "checkIds": ["Emergency-06"] }
+      ]
+    },
+    {
+      "id": "admins",
+      "order": 2,
+      "name": "Admins",
+      "intro": "Before the regular users: there are few of them, they're part of the project, and they need to be able to fix a mistake in the next wave.",
+      "conditions": [
+        { "label": "The methods are on in the authentication methods policy and targeted at admins", "why": "A strength that requires a method that's off in the tenant policy is unsatisfiable — the most common cause of an unachievable policy.", "checkIds": ["Auth-01", "Auth-07"] },
+        { "label": "Every role holder has a phishing-resistant method registered", "why": "Microsoft names fourteen built-in roles as the minimum for phishing-resistant MFA (see config/admin-roles.json); this is a list you check off, not a sample. The measurement cross-checks active and eligible (PIM-eligible) role assignments, since a role holder who still needs to activate their role will fall under the policy just the same once they do. Note that Conditional Access does not enforce on custom roles or on roles scoped to an administrative unit.", "checkIds": ["Auth-12"], "userDrilldown": "adminsWithoutPhishingResistant" },
+        { "label": "There is a bootstrap path for admins without a method", "why": "A Temporary Access Pass itself doesn't count as phishing-resistant; bootstrapping must be finished before the policy goes live. Auth-03 measures whether Temporary Access Pass is on, the route Microsoft intends for this.", "checkIds": ["Auth-03"] },
+        { "label": "The authentication contexts exist and are published", "why": "The associated policies do nothing until a resource or role is tied to a context.", "checkIds": ["Foundation-15"] }
+      ]
+    },
+    {
+      "id": "users",
+      "order": 3,
+      "name": "End users",
+      "intro": "The registration campaign only works after a successful first verification; for a greenfield tenant it's a way to move people along, not a starting point.",
+      "conditions": [
+        { "label": "The registration path is open before the registration policy goes hard", "why": "The registration policy filters both combined registration and the campaign, and so determines who can even start on the rest of the chain.", "checkIds": ["Auth-08"] },
+        { "label": "The target method is on and self-service is enabled", "why": "A hard condition for a passkey campaign; without self-service the user can't add the method themselves.", "checkIds": ["Auth-01"] },
+        { "label": "The campaign has a limited number of snoozes", "why": "Without that limit the user can postpone indefinitely and permanently avoid registration.", "checkIds": ["Auth-08"] },
+        { "label": "The registration rate is measured and high enough", "why": "The actual gate. Agree on a percentage up front and account for reporting latency (measure, wait a day, measure again).", "checkIds": ["Auth-11", "Auth-12"], "userDrilldown": "notMfaRegistered" },
+        { "label": "The tail has a route that isn't a blocker", "why": "Anyone who still has nothing after the campaign needs to be helped without having to turn the policy off. Auth-03 measures whether Temporary Access Pass keeps that route open.", "checkIds": ["Auth-03"] }
+      ]
+    }
+  ],
+  "nonSequentialConditions": {
+    "name": "Conditions per policy type",
+    "intro": "Same logic as the waves, but not persona-ordered: every policy that requires something other than a verification method assumes a state that must exist first.",
+    "conditions": [
+      { "label": "Require Compliant or Hybrid Joined Device", "why": "There must be a compliance policy per platform, devices without a policy must be set to not compliant, and there must be at least one genuinely compliant device.", "checkIds": ["Device-02", "Device-04", "Device-03"] },
+      { "label": "Require App Protection Policy", "why": "Without an assigned app protection policy, no user can satisfy the control, no matter what they do. Device-09 reads the iOS and Android policies and checks whether they're actually assigned; existing without an assignment looks handled in the portal. Device-11 then weighs the policy's target audience against the policy's assignments, per platform: assigned to the pilot group while the policy targets everyone locks out everyone else.", "checkIds": ["Device-09", "Device-11"] },
+      { "label": "Terms of use", "why": "The document must be uploaded in the right languages and the policy must point to the correct agreement id.", "checkIds": ["Foundation-15"] },
+      { "label": "Require Token Protection", "why": "The pilot group must have run without an incompatible client; there's no exhaustive list, so you have to observe this yourself.", "checkIds": ["Condition-04"] },
+      { "label": "Continuous Access Evaluation with strict location enforcement", "why": "All egress addresses must be known and recorded as a named location; don't enable this with shared or undeterminable egress. Condition-06 reads the CAE mode per policy; Condition-01 and Condition-02 show whether the named locations exist to base that mode on.", "checkIds": ["Condition-06", "Condition-01", "Condition-02"] }
+    ]
+  }
+}

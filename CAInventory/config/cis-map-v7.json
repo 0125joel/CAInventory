@@ -1,0 +1,10 @@
+{
+  "benchmarkVersion": "v7.0.0",
+  "mappings": [
+    { "checkId": "Emergency-01", "recommendationId": "1.1.x", "title": "Ensure multiple emergency access accounts exist", "level": "L1" },
+    { "checkId": "Identity-09", "recommendationId": "1.1.x", "title": "Ensure a limited number of Global Administrators", "level": "L1" },
+    { "checkId": "Foundation-07",  "recommendationId": "5.2.x", "title": "Ensure Conditional Access policies scope excludes break-glass", "level": "L1" },
+    { "checkId": "Identity-06", "recommendationId": "5.2.x", "title": "Ensure exclusion groups are owned and reviewed", "level": "L2" },
+    { "checkId": "Identity-14", "recommendationId": "5.1.x", "title": "Ensure cross-tenant access settings are restricted", "level": "L2" }
+  ]
+}

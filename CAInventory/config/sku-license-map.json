@@ -1,0 +1,40 @@
+{
+  "capabilities": {
+    "EntraIdP1": {
+      "displayName": "Entra ID P1",
+      "description": "Conditional Access, authentication strengths, named locations",
+      "servicePlanIds": ["41781fb2-bc02-4b7c-bd55-b576c07bb09d", "eec0eb4f-6444-4f95-aba0-50c24d67f998"],
+      "servicePlanNames": ["AAD_PREMIUM", "AAD_PREMIUM_P2"]
+    },
+    "EntraIdP2": {
+      "displayName": "Entra ID P2",
+      "description": "Identity Protection, PIM, risk-based CA",
+      "servicePlanIds": ["eec0eb4f-6444-4f95-aba0-50c24d67f998"],
+      "servicePlanNames": ["AAD_PREMIUM_P2"]
+    },
+    "EntraIdGovernance": {
+      "displayName": "Entra ID Governance",
+      "description": "PIM and access reviews; an alternative to P2 for those two topics. Microsoft Learn (id-governance/licensing-fundamentals): the Governance products include the same PIM and access review capabilities as P2, and a Governance subscription can sit on a tenant that only has AAD_PREMIUM (P1) itself. A gate that tests PIM/access reviews only against P2 would wrongly mark such a tenant as unassessable.",
+      "servicePlanIds": ["e866a266-3cff-43a3-acca-0c90a7e00c8b"],
+      "servicePlanNames": ["Entra_Identity_Governance"]
+    },
+    "IntunePlan1": {
+      "displayName": "Microsoft Intune Plan 1",
+      "description": "Device compliance / enrollment for compliant-device CA. INTUNE_O365 (Mobile Device Management for Office 365) is deliberately NOT listed here: it is the limited MDM subset without Intune compliance policy, so it does not count as coverage for these checks.",
+      "servicePlanIds": [
+        "c1ec4a95-1f05-45b3-a911-aa3fa01094f5",
+        "3e170737-c728-4eae-bbb9-3f3360f7184c",
+        "d216f254-796f-4dab-bbfa-710686e646b9",
+        "da24caf9-af8e-485c-b7c8-e73336da2693",
+        "8e9ff0ff-aa7a-4b20-83c1-2f636b600ac2"
+      ],
+      "servicePlanNames": ["INTUNE_A", "INTUNE_A_VL", "INTUNE_A_GOV", "INTUNE_EDU", "INTUNE_SMBIZ"]
+    },
+    "DefenderForEndpoint": {
+      "displayName": "Microsoft Defender for Endpoint",
+      "description": "Device risk signals for CA. Only WINDEFATP is confirmed as a servicePlanName in the official export; 'MDATP', which was previously listed here, does not appear in it and was removed rather than kept as a guess.",
+      "servicePlanIds": ["871d91ec-ec1a-452b-a83f-bd76c7d770ef"],
+      "servicePlanNames": ["WINDEFATP"]
+    }
+  }
+}

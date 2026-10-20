@@ -1,0 +1,13 @@
+{
+  "name": "Example Consulting",
+  "tagline": "Digital transformation guide",
+  "footerLine": "Questions about this report? Contact your administrator.",
+  "colors": {
+    "accent": "#FFBD00",
+    "ink": "#29005C",
+    "gap": "#FF6665",
+    "review": "#8A6A00",
+    "lowInfo": "#A9ACAF",
+    "ready": "#1F9D6B"
+  }
+}
