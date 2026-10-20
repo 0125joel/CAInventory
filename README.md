@@ -1,5 +1,7 @@
 # CAInventory
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![PowerShell 7.2+](https://img.shields.io/badge/PowerShell-7.2%2B-5391FE)
+
 A read-only, pre-implementation inventory of Microsoft Entra ID and Conditional Access.
 
 Not "is my tenant compliant right now?", but the question before that: can this tenant take the
