@@ -310,7 +310,7 @@ function Resolve-CAInvLogWindow {
         Set-CAInvAzureUnavailable -Reason 'No Azure context.' -Quiet
         New-CAInvRecord -Domain $domain -CheckId 'Evidence-04' -ObjectType 'DiagnosticSettings' `
             -Property 'workspaceDetection' -Status 'Not assessed' `
-            -NotAssessedReason ('No Azure context. Diagnostic settings/LAW retention not detectable; window stays at {0} d (Graph retention).' -f @($desired)) `
+            -NotAssessedReason ('No Azure context: Log Analytics retention cannot be read, so the requested {0} d window cannot be extended. The effective window falls back to the Graph sign-in retention (see Evidence-05).' -f @($desired)) `
             -GraphSource 'ARM /providers/microsoft.aadiam/diagnosticSettings' -ApiVersion 'n/a' `
             -Recommendation ('Install Az.Accounts and run without -SkipAzure to take advantage of a longer, retention-based window.') | Out-Null
         Write-CAInvGraphRetentionWindow -Desired $desired -Domain $domain

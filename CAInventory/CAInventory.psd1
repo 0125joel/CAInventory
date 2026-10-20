@@ -3,8 +3,8 @@
     ModuleVersion     = '0.108.1'
     GUID              = 'a1f7c3e2-9b64-4d18-8e2a-1c6f0b5d7e40'
     Author            = 'Joel Prins'
-    CompanyName       = 'CAInventory contributors'
-    Copyright         = '(c) Joel Prins. All rights reserved.'
+    CompanyName       = 'IntoTheCloud'
+    Copyright         = '(c) 2026 Joel Prins. Licensed under the MIT License.'
     Description       = 'Read-only pre-implementation readiness inventory for Microsoft Entra ID & Conditional Access. Eight collector layers (0 Foundation through 7 Governance) yield normalized records, a readiness scorecard and a findings register.'
     PowerShellVersion = '7.2'
 

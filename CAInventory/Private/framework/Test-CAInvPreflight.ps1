@@ -41,7 +41,7 @@ function Test-CAInvPreflight {
             $result.WriteScopes = @($result.Scopes | Where-Object { $_ -match '(?i)(ReadWrite|\.Write|\.Create|\.Manage)' } | Sort-Object)
             if ($result.WriteScopes.Count -gt 0) {
                 $result.Warnings += "Session carries $($result.WriteScopes.Count) write scope(s) that this read-only inventory does not use."
-                Write-CAInvLog -Level 'WARN' -Message "Session has $($result.WriteScopes.Count) write scope(s) that CAInventory does not need; the module never writes. Consider a read-only sign-in for a customer assessment. Concerns: $($result.WriteScopes -join ', ')"
+                Write-CAInvLog -Level 'WARN' -Message "Session has $($result.WriteScopes.Count) write scope(s) that CAInventory does not need; the module never writes. Consider a read-only sign-in for an assessment. Concerns: $($result.WriteScopes -join ', ')"
             }
         }
     }
